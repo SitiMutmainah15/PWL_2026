@@ -23,6 +23,11 @@ Route::get('/about', function () {
             NIM saya 244107020143';
 });
 
+//routes name
+Route::get('/user/profile', function () {
+    return 'Ini halaman profile';
+})->name('profile');
+
 Route::get('/user/{name}', function ($name) {
     return 'Nama saya '.$name;
 });
@@ -40,7 +45,3 @@ Route::get('/articles/{article}/ids/{id}', function
 Route::get('/user/{name?}', function ($name='John') {
     return 'Nama saya '.$name;
 });
-
-Route::get('/user/profile', function () {
-    return 'Ini halaman profile';
-})->name('profile');
