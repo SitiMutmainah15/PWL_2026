@@ -37,6 +37,10 @@ Route::get('/articles/{article}/ids/{id}', function
     return 'Halaman Artikel ke-'.$articleId." dengan ID: ".$idId;
 });
 
-Route::get('/user/{name?}', function ($name=null) {
+Route::get('/user/{name?}', function ($name='John') {
     return 'Nama saya '.$name;
 });
+
+Route::get('/user/profile', function () {
+    return 'Ini halaman profile';
+})->name('profile');
