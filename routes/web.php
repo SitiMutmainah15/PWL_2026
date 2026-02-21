@@ -95,6 +95,4 @@ Route::resource('photos', PhotoController::class)->except([
 ]);
 
 //view
-Route::get('/greeting', function () {
-return view('hello', ['name' => 'Siti Mutmainah']);
-});
+Route::get('/greeting', [WelcomeController::class, 'greeting']);

@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-    public function hello() {
+    public function hello()
+    {
         return 'Hellow World';
+    }
+
+    public function greeting()
+    {
+        return view('blog.hello', ['name' => 'Siti Mutmainah']);
     }
 }
