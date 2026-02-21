@@ -1,27 +1,26 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\SelamatController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return 'Hello World';
-});
+Route::get('/hello', [WelcomeController::class,'hello']);
 
 Route::get('/world', function () {
     return 'World';
 });
 
-Route::get('/welcome', function () {
-    return 'Selamat Datang';
-});
+Route::get('/', [PageController::class, 'index']);
 
-Route::get('/about', function () {
-    return 'Nama saya Siti Mutmainah,
-            NIM saya 244107020143';
-});
+Route::get('/about', [PageController::class, 'about']);
+
+Route::get('/articles/{id}', [PageController::class, 'articles']);
 
 //routes name
 Route::get('/user/profile', function () {
