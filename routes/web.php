@@ -45,3 +45,28 @@ Route::get('/articles/{article}/ids/{id}', function
 Route::get('/user/{name?}', function ($name='John') {
     return 'Nama saya '.$name;
 });
+
+//route group
+Route::middleware([])->group(function () {
+
+    Route::get('/latihan1', function () {
+        return 'Ini halaman latihan 1';
+    });
+
+    Route::get('/latihan2', function () {
+        return 'Ini halaman latihan 2';
+    });
+
+});
+
+//route prefix
+Route::prefix('admin')->group(function () {
+
+    Route::get('/user', function () {
+        return 'Halaman admin user';
+    });
+
+    Route::get('/post', function () {
+        return 'Halaman admin post';
+    });
+});
