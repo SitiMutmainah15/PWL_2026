@@ -70,3 +70,13 @@ Route::prefix('admin')->group(function () {
         return 'Halaman admin post';
     });
 });
+
+//route redirect
+Route::redirect('/here', 'there');
+
+Route::get('/there', function () {
+    return 'Anda berhasil dialihkan ke halaman there';
+});
+
+// view routes
+Route::view('/welcome', 'welcome');
